@@ -1,0 +1,820 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f8f5f1;
+  color: #5d4635;
+  font-family: "Cormorant Garamond", serif;
+  overflow-x: hidden;
+}
+
+/* ================= HERO ================= */
+
+#hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-content {
+  /* position: absolute; */
+  /* inset: 0; */
+  position: relative;
+  top: -35%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+
+  padding-right: 8vw;
+
+  align-items: flex-end;
+
+  text-align: right;
+}
+
+.hero-content h1 {
+  font-family: "Parisienne", cursive;
+
+  font-size: clamp(5rem, 10vw, 9rem);
+
+  font-weight: 400;
+
+  color: #1e1307;
+
+  line-height: 1;
+}
+
+.hero-content h2 {
+  margin-top: 10px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  letter-spacing: 8px;
+
+  font-size: 1.2rem;
+
+  color: #1e1307;
+}
+
+.date {
+  margin-top: 20px;
+
+  font-size: 1.6rem;
+
+  letter-spacing: 4px;
+
+  color: #1e1307;
+}
+
+/* ================= AUDIO ================= */
+
+#audioBtn {
+  position: absolute;
+
+  left: 50px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 75px;
+  height: 75px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(38, 27, 12, 0.7);
+
+  background: transparent;
+
+  color: #1e1307;
+
+  font-size: 1.8rem;
+
+  cursor: pointer;
+
+  transition: .3s;
+}
+
+#audioBtn:hover {
+  transform: translateY(-50%) scale(1.05);
+}
+
+#audioBtn:hover {
+  transform: scale(1.05);
+}
+
+
+
+/* ================= STORY ================= */
+
+
+#story {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  /* overflow: hidden; */
+}
+
+.story-bg {
+  position: absolute;
+  inset: 0;
+  background: url('../images/phone.webp') center / cover no-repeat;
+  z-index: 0;
+}
+
+/* .paper-sheet {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 480px;
+  top: -70%;
+
+} */
+
+.paper-img {
+  position: absolute;
+  inset: -8% -6%;
+  width: 112%;
+  height: 116%;
+  object-fit: fill;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.paper-text {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 60px 40px;
+}
+
+/* --- Единая шрифтовая система ---
+   Имя         : Parisienne
+   Весь текст  : Cormorant Garamond
+--------------------------------- */
+
+.invite-greeting {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  line-height: 2.3;
+  color: #2e1f10;
+  margin-bottom: 44px;
+}
+
+.invite-sub {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 2.2;
+  color: #4a3424;
+  margin-bottom: 6px;
+}
+
+.invite-name {
+  font-family: "Parisienne", cursive;
+  font-size: 3.6rem;
+  font-weight: 400;
+  color: #2e1f10;
+  margin: 6px 0 32px;
+  line-height: 1.2;
+}
+
+.invite-main {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  line-height: 2.3;
+  color: #2e1f10;
+}
+
+@media (max-width: 600px) {
+  .paper-text {
+    padding: 48px 28px;
+  }
+
+  .invite-greeting,
+  .invite-main {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+  }
+
+  .invite-name {
+    font-size: 2.8rem;
+  }
+}
+
+.paper-sheet {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.paper-sheet.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ornek-parallax {
+  position: fixed;
+  top: 20%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  /* will-change: transform; */
+}
+
+.ornek-parallax img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.05;
+  /* было 0.06 — подними до 0.12 или 0.15 */
+}
+
+.ornek-parallax.visible {
+  opacity: 1;
+}
+
+.birds-divider {
+  position: relative;
+  z-index: 30;
+
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+  padding: 0 5vw;
+
+  margin-top: -50px;
+  margin-bottom: -150px;
+  /* было -20px */
+}
+
+.bird {
+  width: clamp(120px, 18vw, 220px);
+  height: auto;
+  opacity: 0.9;
+}
+
+.bird-left {
+  transform: rotate(-20deg);
+  animation: flyTop 6s ease-in-out infinite;
+}
+
+.bird-right {
+  transform: scaleX(-1) rotate(-10deg);
+  animation: flyBottom 6s ease-in-out infinite;
+}
+
+/* @keyframes flyTop {
+
+  0%,
+  100% {
+    transform: rotate(-20deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(-35deg) translateY(-25px);
+  }
+}
+
+@keyframes flyBottom {
+
+  0%,
+  100% {
+    transform: scaleX(-1) rotate(-20deg) translateY(0);
+  }
+
+  50% {
+    transform: scaleX(-1) rotate(-35deg) translateY(25px);
+  }
+} */
+
+/* ================= EVENT ================= */
+
+#event {
+  padding: 120px 20px;
+  text-align: center;
+}
+
+#event h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 50px;
+  letter-spacing: 4px;
+}
+
+.event-card {
+  max-width: 480px;
+  margin: auto;
+  border: 1px solid #d9c7b4;
+  padding: 50px 40px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+/* --- Календарь --- */
+.event-calendar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.cal-month {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.8rem;
+  letter-spacing: 4px;
+  color: #9a7e6a;
+  font-weight: 500;
+}
+
+.cal-grid-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  width: 100%;
+  max-width: 320px;
+}
+
+.cal-grid-header span {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  color: #b89e8a;
+  text-align: center;
+  padding: 4px 0;
+}
+
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  width: 100%;
+  max-width: 320px;
+  gap: 2px;
+}
+
+.cal-cell {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #5d4635;
+  text-align: center;
+  padding: 6px 2px;
+  position: relative;
+}
+
+.cal-cell.empty {
+  color: transparent;
+}
+
+.cal-cell.muted {
+  color: #c9b8a8;
+}
+
+.cal-cell.today {
+  font-weight: 600;
+  color: #2e1f10;
+  z-index: 1;
+}
+
+.cal-cell.today::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 34px;
+  height: 30px;
+  background: #c0392b;
+  clip-path: path('M17 26 C17 26 2 18 2 9 C2 4 6 1 10 1 C13 1 15 3 17 5 C19 3 21 1 24 1 C28 1 32 4 32 9 C32 18 17 26 17 26 Z');
+  z-index: -1;
+}
+
+.cal-cell.today span {
+  position: relative;
+  color: white;
+  font-weight: 600;
+}
+
+/* --- Разделитель --- */
+.event-divider {
+  width: 60px;
+  height: 1px;
+  background: #d9c7b4;
+}
+
+/* --- Время --- */
+.event-time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.event-time-num {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.8rem;
+  font-weight: 300;
+  color: #2e1f10;
+  letter-spacing: 6px;
+}
+
+.event-time-label {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  color: #9a7e6a;
+  font-weight: 500;
+}
+
+/* --- Адрес --- */
+.event-address {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.event-city {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.85rem;
+  letter-spacing: 4px;
+  color: #9a7e6a;
+  font-weight: 500;
+}
+
+.event-hall {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #2e1f10;
+  letter-spacing: 3px;
+}
+
+/* --- Кнопка 2GIS --- */
+.event-map-btn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 14px 32px;
+  border: 1px solid #d9c7b4;
+  border-radius: 50px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  color: #5d4635;
+  text-decoration: none;
+  transition: 0.3s;
+  background: transparent;
+}
+
+.event-map-btn:hover {
+  background: #5d4635;
+  color: white;
+  border-color: #5d4635;
+}
+
+@media (max-width: 600px) {
+  .cal-day {
+    font-size: 5rem;
+  }
+
+  .event-hall {
+    font-size: 1.4rem;
+  }
+
+  .event-time-num {
+    font-size: 2.2rem;
+  }
+}
+
+/* ================= TIMER ================= */
+
+/* ================= TIMER ================= */
+
+#countdown {
+  position: relative;
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 80px 20px;
+}
+
+.countdown-bg {
+  position: absolute;
+  inset: 0;
+  background: url('./images/uz.jpg') center / cover no-repeat;
+  z-index: 0;
+}
+
+.countdown-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom,
+      rgba(20, 10, 5, 0.55) 0%,
+      rgba(20, 10, 5, 0.35) 50%,
+      rgba(20, 10, 5, 0.65) 100%);
+  z-index: 0;
+}
+
+.countdown-inner {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.countdown-inner h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 8px;
+  color: rgba(255, 240, 220, 0.75);
+  margin-bottom: 60px;
+  text-transform: uppercase;
+}
+
+.timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.timer-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  min-width: 100px;
+}
+
+.timer-block span {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(3.5rem, 8vw, 6rem);
+  font-weight: 300;
+  color: #fff8f0;
+  line-height: 1;
+  display: block;
+}
+
+.timer-block p {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.65rem;
+  letter-spacing: 4px;
+  color: rgba(255, 230, 200, 0.6);
+  font-weight: 500;
+}
+
+.timer-sep {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 200;
+  color: rgba(255, 210, 170, 0.4);
+  line-height: 1;
+  margin-bottom: 28px;
+}
+
+@media (max-width: 600px) {
+  .timer-block {
+    min-width: 65px;
+  }
+
+  .timer-sep {
+    font-size: 2rem;
+  }
+
+  .countdown-inner h2 {
+    font-size: 0.8rem;
+    letter-spacing: 5px;
+    margin-bottom: 40px;
+  }
+}
+
+/* ================= RSVP ================= */
+
+/* ================= RSVP ================= */
+
+#rsvp {
+  padding: 120px 20px;
+  background: #f8f5f1;
+}
+
+.rsvp-inner {
+  max-width: 580px;
+  margin: auto;
+  text-align: center;
+}
+
+#rsvp h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 3rem;
+  font-weight: 400;
+  letter-spacing: 4px;
+  color: #2e1f10;
+  margin-bottom: 12px;
+}
+
+.rsvp-sub {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  color: #9a7e6a;
+  margin-bottom: 50px;
+}
+
+#guestForm {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  text-align: left;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-group label {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  color: #9a7e6a;
+  text-transform: uppercase;
+}
+
+#guestForm input[type="text"],
+#guestForm textarea {
+  padding: 16px 20px;
+  border: 1px solid #d9c7b4;
+  border-radius: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.1rem;
+  color: #2e1f10;
+  background: white;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+#guestForm input[type="text"]:focus,
+#guestForm textarea:focus {
+  border-color: #5d4635;
+}
+
+#guestForm textarea {
+  min-height: 110px;
+  resize: none;
+}
+
+/* --- Radio cards --- */
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.radio-card input[type="radio"] {
+  display: none;
+}
+
+.radio-box {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  border: 1px solid #d9c7b4;
+  cursor: pointer;
+  transition: all 0.25s;
+  background: white;
+}
+
+.radio-card input:checked+.radio-box {
+  border-color: #5d4635;
+  background: #fdf8f2;
+}
+
+.radio-icon {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.1rem;
+  color: #9a7e6a;
+  width: 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.radio-card input:checked+.radio-box .radio-icon {
+  color: #5d4635;
+}
+
+.radio-text {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.05rem;
+  color: #5d4635;
+  letter-spacing: 1px;
+}
+
+/* --- Button --- */
+#guestForm button {
+  padding: 18px;
+  border: 1px solid #5d4635;
+  border-radius: 0;
+  background: transparent;
+  color: #5d4635;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.85rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 8px;
+}
+
+#guestForm button:hover {
+  background: #5d4635;
+  color: white;
+}
+
+/* --- Success --- */
+.formSuccess {
+  display: none;
+  text-align: center;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.8rem;
+  color: #5d4635;
+  letter-spacing: 2px;
+  padding: 20px;
+  /* border: 1px solid #d9c7b4; */
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+
+  #hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-image img {
+    height: 65vh;
+  }
+
+  .hero-content {
+    padding: 60px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 5rem;
+  }
+
+  .paper h2,
+  .paper p {
+    font-size: 1.5rem;
+  }
+
+  .timer {
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+
+  .timer span {
+    font-size: 2.8rem;
+  }
+}
