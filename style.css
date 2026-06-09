@@ -147,7 +147,7 @@ body {
 #audioBtn {
   position: absolute;
 
-  left: 15%;
+  left: 50px;
   top: 75%;
 
   transform: translateY(-50%);
@@ -350,7 +350,7 @@ body {
 .bird-right {
   position: absolute;
   bottom: 20px;
-  right: 5%;
+  right: -8%;
   width: clamp(120px, 18vw, 220px);
   transform: scaleX(-1) rotate(-20deg);
 }
@@ -405,6 +405,20 @@ body {
   width: clamp(120px, 18vw, 220px);
   height: auto;
   opacity: 0.9;
+}
+
+@media (max-width: 600px) {
+  .bird-right {
+    bottom: -50px;
+    /* опускаем ниже (примерно -20% визуально) */
+    right: 3%;
+    width: 140px;
+    z-index: 3;
+  }
+
+
+
+
 }
 
 /* .bird-left {
