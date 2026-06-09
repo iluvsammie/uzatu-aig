@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&display=swap');
 
+@font-face {
+  font-family: 'bikh';
+  src: url(bikhamcyrscript.ttf);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -15,6 +20,59 @@ body {
   color: #5d4635;
   font-family: "Cormorant Garamond", serif;
   overflow-x: hidden;
+}
+
+.lang-switcher {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(248, 245, 241, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid #d9c7b4;
+  border-radius: 50px;
+  padding: 7px 16px;
+}
+
+.lang-btn {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.72rem;
+  letter-spacing: 3px;
+  color: #b89e8a;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px 2px;
+  transition: color 0.25s;
+  line-height: 1;
+}
+
+.lang-btn.active {
+  color: #2e1f10;
+  font-weight: 600;
+}
+
+.lang-btn:hover:not(.active) {
+  color: #5d4635;
+}
+
+.lang-divider {
+  color: #d9c7b4;
+  font-size: 0.75rem;
+  line-height: 1;
+  user-select: none;
+}
+
+@media (max-width: 600px) {
+  .lang-switcher {
+    top: 14px;
+    right: 14px;
+    padding: 6px 14px;
+  }
 }
 
 /* ================= HERO ================= */
@@ -51,7 +109,7 @@ body {
 }
 
 .hero-content h1 {
-  font-family: "Parisienne", cursive;
+  font-family: "bikh", cursive;
 
   font-size: clamp(5rem, 10vw, 9rem);
 
@@ -89,8 +147,8 @@ body {
 #audioBtn {
   position: absolute;
 
-  left: 50px;
-  top: 50%;
+  left: 15%;
+  top: 75%;
 
   transform: translateY(-50%);
 
@@ -125,14 +183,19 @@ body {
 /* ================= STORY ================= */
 
 
-#story {
+/* #story {
   position: relative;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 60px 20px;
-  /* overflow: hidden; */
+} */
+
+#story {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
 }
 
 .story-bg {
@@ -195,7 +258,7 @@ body {
 }
 
 .invite-name {
-  font-family: "Parisienne", cursive;
+  font-family: "bikh", cursive;
   font-size: 3.6rem;
   font-weight: 400;
   color: #2e1f10;
@@ -265,6 +328,64 @@ body {
   opacity: 1;
 }
 
+#story-wrapper {
+  position: relative;
+}
+
+.birds-divider {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.bird-left {
+  position: absolute;
+  top: -5px;
+  left: -5%;
+  width: clamp(120px, 18vw, 220px);
+  transform: rotate(-10deg);
+}
+
+.bird-right {
+  position: absolute;
+  bottom: 20px;
+  right: 5%;
+  width: clamp(120px, 18vw, 220px);
+  transform: scaleX(-1) rotate(-20deg);
+}
+
+.story-invitation-header {
+  position: relative;
+  z-index: 6;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.story-subtitle {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.9rem;
+  letter-spacing: 6px;
+  color: #9a7e6a;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.story-names {
+  font-family: "bikh", cursive;
+  font-size: 2.6rem;
+  color: #2e1f10;
+}
+
+.story-names span {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem;
+  margin: 0 10px;
+  color: #9a7e6a;
+}
+
+/* 
 .birds-divider {
   position: relative;
   z-index: 30;
@@ -278,23 +399,23 @@ body {
   margin-top: -50px;
   margin-bottom: -150px;
   /* было -20px */
-}
+/* } */
 
-.bird {
+*/ .bird {
   width: clamp(120px, 18vw, 220px);
   height: auto;
   opacity: 0.9;
 }
 
-.bird-left {
+/* .bird-left {
   transform: rotate(-20deg);
   animation: flyTop 6s ease-in-out infinite;
 }
 
 .bird-right {
-  transform: scaleX(-1) rotate(-10deg);
+  transform: scaleX(-1) rotate(-20deg);
   animation: flyBottom 6s ease-in-out infinite;
-}
+} */
 
 /* @keyframes flyTop {
 
@@ -419,17 +540,23 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 28px;
+  height: 28px;
+
   transform: translate(-50%, -50%);
-  width: 34px;
-  height: 30px;
-  background: #c0392b;
-  clip-path: path('M17 26 C17 26 2 18 2 9 C2 4 6 1 10 1 C13 1 15 3 17 5 C19 3 21 1 24 1 C28 1 32 4 32 9 C32 18 17 26 17 26 Z');
+
+  border: 1.0px solid #2e1f10;
+  /* цвет как текст */
+  border-radius: 50%;
+
+  background: transparent;
+
   z-index: -1;
 }
 
 .cal-cell.today span {
   position: relative;
-  color: white;
+  color: #5d4635;
   font-weight: 600;
 }
 
