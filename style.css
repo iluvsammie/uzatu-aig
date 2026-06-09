@@ -194,7 +194,7 @@ body {
 
 #story {
   position: relative;
-  min-height: 100vh;
+  min-height: 120vh;
   overflow: hidden;
 }
 
@@ -342,7 +342,7 @@ body {
 .bird-left {
   position: absolute;
   top: -5px;
-  left: -5%;
+  left: -10%;
   width: clamp(120px, 18vw, 220px);
   transform: rotate(-10deg);
 }
@@ -409,7 +409,7 @@ body {
 
 @media (max-width: 600px) {
   .bird-right {
-    bottom: -50px;
+    bottom: -8px;
     /* опускаем ниже (примерно -20% визуально) */
     right: 3%;
     width: 140px;
