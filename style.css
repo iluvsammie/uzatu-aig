@@ -16,7 +16,7 @@ html {
 }
 
 body {
-  background-image: linear-gradient(to bottom, #f8f5f1, #ddcbaf);
+  background-image: linear-gradient(to bottom, #f8f5f1, #ddcbaf, #f5ebde);
   color: #3a2a1c;
   font-family: "Cormorant Garamond", serif;
   overflow-x: hidden;
@@ -705,18 +705,18 @@ body {
 
 #rsvp {
   padding: 120px 20px;
-  background: #f8f5f1;
+  background: none;
 }
 
 .rsvp-inner {
-  max-width: 580px;
+  max-width: 600px;
   margin: auto;
   text-align: center;
 }
 
 #rsvp h2 {
   font-family: "Cormorant Garamond", serif;
-  font-size: 3rem;
+  font-size: 3.3rem;
   font-weight: 400;
   letter-spacing: 4px;
   color: #1e1307;
@@ -725,7 +725,7 @@ body {
 
 .rsvp-sub {
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.1rem;
+  font-size: 2.1rem;
   /* было 1rem */
   letter-spacing: 2px;
   color: #6b5040;
@@ -749,7 +749,7 @@ body {
 
 .form-group label {
   font-family: "Cormorant Garamond", serif;
-  font-size: 0.95rem;
+  font-size: 1.5rem;
   /* было 0.8rem */
   letter-spacing: 3px;
   color: #6b5040;
@@ -765,7 +765,7 @@ body {
   border: 1px solid #c9b09a;
   border-radius: 0;
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   /* было 1.1rem */
   color: #1e1307;
   background: white;
@@ -826,7 +826,7 @@ body {
 
 .radio-text {
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.15rem;
+  font-size: 1.5rem;
   /* было 1.05rem */
   color: #3a2a1c;
   /* было #5d4635 */
@@ -839,10 +839,10 @@ body {
   /* было 18px */
   border: 1.5px solid #3a2a1c;
   border-radius: 0;
-  background: transparent;
-  color: #3a2a1c;
+  background: #3a2a1c;
+  color: #ffffff;
   font-family: "Cormorant Garamond", serif;
-  font-size: 1rem;
+  font-size: 1.2rem;
   /* было 0.85rem */
   letter-spacing: 4px;
   text-transform: uppercase;
@@ -853,15 +853,15 @@ body {
 }
 
 #guestForm button:hover {
-  background: #3a2a1c;
-  color: white;
+  background: #ffffff;
+  color: #1e1307;
 }
 
 .formSuccess {
   display: none;
   text-align: center;
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.8rem;
+  font-size: 2.0rem;
   color: #3a2a1c;
   letter-spacing: 2px;
   padding: 20px;
