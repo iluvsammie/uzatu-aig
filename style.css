@@ -150,11 +150,12 @@ body {
 
 #story {
   position: relative;
-  min-height: 135vh;
+  min-height: 130vh;
   overflow: hidden;
 }
 
 .story-bg {
+  background-attachment: local;
   position: absolute;
   inset: 0;
   background: url('../images/phone.webp') center / cover no-repeat;
@@ -195,16 +196,16 @@ body {
   font-weight: 500;
   letter-spacing: 1.5px;
   line-height: 2.2;
-  color: #1e1307;
+  color: #2e1f10;
   margin-bottom: 6px;
 }
 
 .invite-name {
   font-family: "bikh", cursive;
   font-size: 4rem;
-  font-weight: 500;
-  color: #140d05;
-  margin: 30px 0 40px;
+  font-weight: 400;
+  color: #1e1307;
+  margin: 36px 0 36px;
   line-height: 1.2;
 }
 
@@ -259,6 +260,12 @@ body {
   z-index: 5;
 }
 
+/* ── база: iPhone 12 Pro (≤480px) — твои значения ── */
+.bird {
+  height: auto;
+  opacity: 0.9;
+}
+
 .bird-left {
   position: absolute;
   top: -15px;
@@ -269,16 +276,79 @@ body {
 
 .bird-right {
   position: absolute;
-  bottom: -50px;
+  bottom: -10px;
   right: -10%;
   width: clamp(120px, 18vw, 220px);
   transform: scaleX(-1) rotate(-20deg);
 }
 
-.bird {
-  width: clamp(120px, 18vw, 220px);
-  height: auto;
-  opacity: 0.9;
+/* на маленьких экранах бумага чуть выходит за края — увеличиваем overlap */
+@media (max-width: 480px) {
+  .paper-img {
+    inset: -6% -7%;
+    width: 114%;
+    height: 112%;
+  }
+}
+
+/* ── широкий телефон (481–768px) ── */
+@media (min-width: 420px) and (max-width: 768px) {
+  .bird-left {
+    width: 160px;
+    left: -10%;
+    top: -40px;
+  }
+
+  .bird-right {
+    width: 160px;
+    right: -5%;
+    bottom: 20px;
+  }
+}
+
+/* ── планшет (769–1200px) ── */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .bird-left {
+    width: 185px;
+    left: 0%;
+    top: -5px;
+  }
+
+  .bird-right {
+    width: 185px;
+    right: 0%;
+    bottom: -15px;
+  }
+}
+
+/* ── десктоп (1201–1600px) ── */
+@media (min-width: 1201px) and (max-width: 1600px) {
+  .bird-left {
+    width: 210px;
+    left: 3%;
+    top: 0px;
+  }
+
+  .bird-right {
+    width: 210px;
+    right: 3%;
+    bottom: 0px;
+  }
+}
+
+/* ── широкий экран (1601px+) ── */
+@media (min-width: 1601px) {
+  .bird-left {
+    width: 235px;
+    left: 6%;
+    top: 10px;
+  }
+
+  .bird-right {
+    width: 235px;
+    right: 6%;
+    bottom: 10px;
+  }
 }
 
 .story-invitation-header {
@@ -291,7 +361,7 @@ body {
 
 .story-subtitle {
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.4rem;
+  font-size: 1rem;
   /* было 0.9rem */
   letter-spacing: 5px;
   color: #6b5040;
@@ -316,6 +386,7 @@ body {
 }
 
 /* ================= EVENT ================= */
+
 #event {
   padding: 120px 20px;
   text-align: center;
@@ -408,14 +479,17 @@ body {
 .cal-cell.today::before {
   content: '';
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 38px;
   transform: translate(-50%, -50%);
-  border: 1.5px solid #1e1307;
-  border-radius: 50%;
-  background: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 95'%3E%3Cpath d='M50 88 C50 88 4 56 4 28 C4 13 17 2 32 2 C41 2 48 7 50 13 C52 7 59 2 68 2 C83 2 96 13 96 28 C96 56 50 88 50 88Z' fill='none' stroke='%23b8926a' stroke-width='5' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  border-radius: 0;
   z-index: -1;
 }
 
@@ -442,14 +516,14 @@ body {
   font-family: "Cormorant Garamond", serif;
   font-size: 3rem;
   /* было 2.8rem */
-  font-weight: 300;
+  font-weight: 500;
   color: #1e1307;
   letter-spacing: 6px;
 }
 
 .event-time-label {
   font-family: "Cormorant Garamond", serif;
-  font-size: 0.95rem;
+  font-size: 1.4rem;
   /* было 0.75rem */
   letter-spacing: 3px;
   color: #6b5040;
@@ -507,7 +581,6 @@ body {
   color: white;
   border-color: #3a2a1c;
 }
-
 
 /* ================= TIMER ================= */
 
@@ -815,7 +888,7 @@ body {
   }
 
   .story-subtitle {
-    font-size: 1.2rem;
+    font-size: 0.95rem;
     letter-spacing: 3px;
   }
 
@@ -824,13 +897,12 @@ body {
   }
 
   /* event */
-  /* event */
   .event-hall {
     font-size: 1.6rem;
   }
 
   .event-time-num {
-    font-size: 2.4rem;
+    font-size: 4.4rem;
   }
 
   /* timer */
@@ -846,26 +918,10 @@ body {
     font-size: 2rem;
   }
 
-  .timer-block p {
-    font-size: 0.78rem;
-  }
-
-  .timer-sep {
-    font-size: 2rem;
-  }
-
   .countdown-inner h2 {
     font-size: 0.95rem;
     letter-spacing: 5px;
     margin-bottom: 40px;
-  }
-
-  /* birds */
-  .bird-right {
-    bottom: -8px;
-    right: 3%;
-    width: 140px;
-    z-index: 3;
   }
 
   /* lang */
