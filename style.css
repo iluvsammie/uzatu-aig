@@ -620,7 +620,7 @@ body {
 
 .countdown-inner h2 {
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   /* было 1rem */
   font-weight: 500;
   letter-spacing: 8px;
@@ -647,8 +647,8 @@ body {
 
 .timer-block span {
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(3.5rem, 8vw, 6rem);
-  font-weight: 300;
+  font-size: clamp(4.5rem, 8vw, 6rem);
+  font-weight: 500;
   color: #fff8f0;
   line-height: 1;
   display: block;
