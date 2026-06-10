@@ -204,7 +204,7 @@ body {
   font-family: "bikh", cursive;
   font-size: 4rem;
   font-weight: 400;
-  color: #1e1307;
+  color: #6b5040;
   margin: 36px 0 36px;
   line-height: 1.2;
 }
@@ -375,14 +375,14 @@ body {
   font-family: "bikh", cursive;
   font-size: 3.8rem;
   /* было 2.6rem */
-  color: #1e1307;
+  color: #6b5040;
 }
 
 .story-names span {
   font-family: "Cormorant Garamond", serif;
   font-size: 2.5rem;
   margin: 0 10px;
-  color: #6b5040;
+  color: #574840;
 }
 
 /* ================= EVENT ================= */
@@ -510,7 +510,7 @@ body {
   width: 50px;
   height: 48px;
   transform: translate(-50%, -50%);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 95'%3E%3Cpath d='M50 88 C50 88 4 56 4 28 C4 13 17 2 32 2 C41 2 48 7 50 13 C52 7 59 2 68 2 C83 2 96 13 96 28 C96 56 50 88 50 88Z' fill='%23b8926a' stroke='%23b8926a' stroke-width='5' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 95'%3E%3Cpath d='M50 88 C50 88 4 56 4 28 C4 13 17 2 32 2 C41 2 48 7 50 13 C52 7 59 2 68 2 C83 2 96 13 96 28 C96 56 50 88 50 88Z' fill='rgba(55%2C38%2C15%2C0.7)' stroke='rgba(55%2C38%2C15%2C0.7)' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -597,10 +597,11 @@ body {
   font-size: 1.05rem;
   /* было 1rem */
   letter-spacing: 2px;
-  color: #3a2a1c;
+  color: #ffffff;
   text-decoration: none;
   transition: 0.3s;
-  background: transparent;
+  background: rgba(55, 38, 15, 0.7);
+  ;
   font-weight: 500;
 }
 
@@ -839,7 +840,8 @@ body {
   /* было 18px */
   border: 1.5px solid #3a2a1c;
   border-radius: 0;
-  background: #3a2a1c;
+  background: rgba(55, 38, 15, 0.7);
+  ;
   color: #ffffff;
   font-family: "Cormorant Garamond", serif;
   font-size: 1.2rem;
