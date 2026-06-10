@@ -372,15 +372,15 @@ body {
 }
 
 .story-names {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 2.8rem;
+  font-family: "bikh", cursive;
+  font-size: 3.8rem;
   /* было 2.6rem */
   color: #1e1307;
 }
 
 .story-names span {
   font-family: "Cormorant Garamond", serif;
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin: 0 10px;
   color: #6b5040;
 }
@@ -921,7 +921,7 @@ body {
   }
 
   .story-names {
-    font-size: 2.4rem;
+    font-size: 3.0rem;
   }
 
   /* event */
