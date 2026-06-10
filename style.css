@@ -394,7 +394,7 @@ body {
 
 #event h2 {
   font-family: "Cormorant Garamond", serif;
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: 400;
   margin-bottom: 50px;
   letter-spacing: 4px;
@@ -476,6 +476,32 @@ body {
   z-index: 1;
 }
 
+@keyframes heartbeat {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  14% {
+    transform: translate(-50%, -50%) scale(1.18);
+  }
+
+  28% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  42% {
+    transform: translate(-50%, -50%) scale(1.12);
+  }
+
+  56% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
 .cal-cell.today::before {
   content: '';
   position: absolute;
@@ -491,6 +517,7 @@ body {
   border: none;
   border-radius: 0;
   z-index: -1;
+  animation: heartbeat 1.6s ease-in-out infinite;
 }
 
 .cal-cell.today span {
@@ -498,6 +525,7 @@ body {
   color: #1e1307;
   font-weight: 700;
 }
+
 
 .event-divider {
   width: 60px;
@@ -550,9 +578,9 @@ body {
 
 .event-hall {
   font-family: "Cormorant Garamond", serif;
-  font-size: 2rem;
+  font-size: 2.5rem;
   /* было 1.8rem */
-  font-weight: 700;
+  font-weight: 900;
   /* было 600 */
   color: #1e1307;
   letter-spacing: 3px;
@@ -898,7 +926,7 @@ body {
 
   /* event */
   .event-hall {
-    font-size: 1.6rem;
+    font-size: 1.9rem;
   }
 
   .event-time-num {
