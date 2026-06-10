@@ -165,7 +165,7 @@ body {
 .paper-img {
   position: absolute;
   inset: -8% -6%;
-  width: 112%;
+  width: 120%;
   height: 116%;
   object-fit: fill;
   mix-blend-mode: multiply;
@@ -912,11 +912,11 @@ body {
   }
 
   .invite-name {
-    font-size: 3.2rem;
+    font-size: 4.2rem;
   }
 
   .story-subtitle {
-    font-size: 0.95rem;
+    font-size: 1.4rem;
     letter-spacing: 3px;
   }
 
