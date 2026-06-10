@@ -17,10 +17,14 @@ html {
 
 body {
   background: #f8f5f1;
-  color: #5d4635;
+  color: #3a2a1c;
   font-family: "Cormorant Garamond", serif;
   overflow-x: hidden;
+  font-size: 18px;
+  /* базовый размер для взрослой аудитории */
 }
+
+/* ================= LANG SWITCHER ================= */
 
 .lang-switcher {
   position: fixed;
@@ -30,30 +34,31 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
-  background: rgba(248, 245, 241, 0.88);
+  background: rgba(248, 245, 241, 0.92);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid #d9c7b4;
+  border: 1px solid #c9b09a;
   border-radius: 50px;
-  padding: 7px 16px;
+  padding: 9px 20px;
 }
 
 .lang-btn {
   font-family: "Cormorant Garamond", serif;
-  font-size: 0.72rem;
+  font-size: 0.85rem;
+  /* было 0.72rem */
   letter-spacing: 3px;
-  color: #b89e8a;
+  color: #8a6e58;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 2px 2px;
+  padding: 2px;
   transition: color 0.25s;
   line-height: 1;
 }
 
 .lang-btn.active {
   color: #2e1f10;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .lang-btn:hover:not(.active) {
@@ -61,18 +66,10 @@ body {
 }
 
 .lang-divider {
-  color: #d9c7b4;
-  font-size: 0.75rem;
+  color: #c9b09a;
+  font-size: 0.9rem;
   line-height: 1;
   user-select: none;
-}
-
-@media (max-width: 600px) {
-  .lang-switcher {
-    top: 14px;
-    right: 14px;
-    padding: 6px 14px;
-  }
 }
 
 /* ================= HERO ================= */
@@ -91,54 +88,39 @@ body {
 }
 
 .hero-content {
-  /* position: absolute; */
-  /* inset: 0; */
   position: relative;
   top: -35%;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 20px;
-
   padding-right: 8vw;
-
   align-items: flex-end;
-
   text-align: right;
 }
 
 .hero-content h1 {
   font-family: "bikh", cursive;
-
   font-size: clamp(5rem, 10vw, 9rem);
-
   font-weight: 400;
-
   color: #1e1307;
-
   line-height: 1;
 }
 
 .hero-content h2 {
   margin-top: 10px;
-
   font-family: "Cormorant Garamond", serif;
-
   letter-spacing: 8px;
-
-  font-size: 1.2rem;
-
+  font-size: 1.3rem;
+  /* было 1.2rem */
   color: #1e1307;
 }
 
 .date {
   margin-top: 20px;
-
-  font-size: 1.6rem;
-
+  font-size: 1.8rem;
+  /* было 1.6rem */
   letter-spacing: 4px;
-
   color: #1e1307;
 }
 
@@ -146,27 +128,17 @@ body {
 
 #audioBtn {
   position: absolute;
-
   left: 50px;
   top: 75%;
-
   transform: translateY(-50%);
-
   width: 75px;
   height: 75px;
-
   border-radius: 50%;
-
   border: 1px solid rgba(38, 27, 12, 0.7);
-
   background: transparent;
-
   color: #1e1307;
-
   font-size: 1.8rem;
-
   cursor: pointer;
-
   transition: .3s;
 }
 
@@ -174,27 +146,11 @@ body {
   transform: translateY(-50%) scale(1.05);
 }
 
-#audioBtn:hover {
-  transform: scale(1.05);
-}
-
-
-
 /* ================= STORY ================= */
-
-
-/* #story {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 60px 20px;
-} */
 
 #story {
   position: relative;
-  min-height: 120vh;
+  min-height: 135vh;
   overflow: hidden;
 }
 
@@ -204,15 +160,6 @@ body {
   background: url('../images/phone.webp') center / cover no-repeat;
   z-index: 0;
 }
-
-/* .paper-sheet {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 480px;
-  top: -70%;
-
-} */
 
 .paper-img {
   position: absolute;
@@ -232,63 +179,42 @@ body {
   padding: 60px 40px;
 }
 
-/* --- Единая шрифтовая система ---
-   Имя         : Parisienne
-   Весь текст  : Cormorant Garamond
---------------------------------- */
-
 .invite-greeting {
   font-family: "Cormorant Garamond", serif;
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 3px;
-  line-height: 2.3;
-  color: #2e1f10;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  line-height: 2.2;
+  color: #1e1307;
   margin-bottom: 44px;
 }
 
 .invite-sub {
   font-family: "Cormorant Garamond", serif;
-  font-size: 0.8rem;
-  font-weight: 400;
-  letter-spacing: 2px;
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
   line-height: 2.2;
-  color: #4a3424;
+  color: #1e1307;
   margin-bottom: 6px;
 }
 
 .invite-name {
   font-family: "bikh", cursive;
-  font-size: 3.6rem;
-  font-weight: 400;
-  color: #2e1f10;
-  margin: 6px 0 32px;
+  font-size: 4rem;
+  font-weight: 500;
+  color: #140d05;
+  margin: 50px 0 0;
   line-height: 1.2;
 }
 
 .invite-main {
   font-family: "Cormorant Garamond", serif;
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 3px;
-  line-height: 2.3;
-  color: #2e1f10;
-}
-
-@media (max-width: 600px) {
-  .paper-text {
-    padding: 48px 28px;
-  }
-
-  .invite-greeting,
-  .invite-main {
-    font-size: 0.75rem;
-    letter-spacing: 2px;
-  }
-
-  .invite-name {
-    font-size: 2.8rem;
-  }
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  line-height: 2.2;
+  color: #1e1307;
 }
 
 .paper-sheet {
@@ -313,7 +239,6 @@ body {
   z-index: -1;
   opacity: 0;
   transition: opacity 0.8s ease;
-  /* will-change: transform; */
 }
 
 .ornek-parallax img {
@@ -321,15 +246,10 @@ body {
   height: 100%;
   object-fit: contain;
   opacity: 0.05;
-  /* было 0.06 — подними до 0.12 или 0.15 */
 }
 
 .ornek-parallax.visible {
   opacity: 1;
-}
-
-#story-wrapper {
-  position: relative;
 }
 
 .birds-divider {
@@ -341,7 +261,7 @@ body {
 
 .bird-left {
   position: absolute;
-  top: -5px;
+  top: -15px;
   left: -10%;
   width: clamp(120px, 18vw, 220px);
   transform: rotate(-10deg);
@@ -349,10 +269,16 @@ body {
 
 .bird-right {
   position: absolute;
-  bottom: 20px;
-  right: -8%;
+  bottom: -50px;
+  right: -10%;
   width: clamp(120px, 18vw, 220px);
   transform: scaleX(-1) rotate(-20deg);
+}
+
+.bird {
+  width: clamp(120px, 18vw, 220px);
+  height: auto;
+  opacity: 0.9;
 }
 
 .story-invitation-header {
@@ -365,95 +291,29 @@ body {
 
 .story-subtitle {
   font-family: "Cormorant Garamond", serif;
-  font-size: 0.9rem;
-  letter-spacing: 6px;
-  color: #9a7e6a;
+  font-size: 1.4rem;
+  /* было 0.9rem */
+  letter-spacing: 5px;
+  color: #6b5040;
+  /* было #9a7e6a — темнее для читаемости */
   text-transform: uppercase;
   margin-bottom: 12px;
+  font-weight: 500;
 }
 
 .story-names {
   font-family: "bikh", cursive;
-  font-size: 2.6rem;
-  color: #2e1f10;
+  font-size: 2.8rem;
+  /* было 2.6rem */
+  color: #1e1307;
 }
 
 .story-names span {
   font-family: "Cormorant Garamond", serif;
   font-size: 2rem;
   margin: 0 10px;
-  color: #9a7e6a;
+  color: #6b5040;
 }
-
-/* 
-.birds-divider {
-  position: relative;
-  z-index: 30;
-
-  display: flex;
-  justify-content: space-between;
-
-  width: 100%;
-  padding: 0 5vw;
-
-  margin-top: -50px;
-  margin-bottom: -150px;
-  /* было -20px */
-/* } */
-
-*/ .bird {
-  width: clamp(120px, 18vw, 220px);
-  height: auto;
-  opacity: 0.9;
-}
-
-@media (max-width: 600px) {
-  .bird-right {
-    bottom: -8px;
-    /* опускаем ниже (примерно -20% визуально) */
-    right: 3%;
-    width: 140px;
-    z-index: 3;
-  }
-
-
-
-
-}
-
-/* .bird-left {
-  transform: rotate(-20deg);
-  animation: flyTop 6s ease-in-out infinite;
-}
-
-.bird-right {
-  transform: scaleX(-1) rotate(-20deg);
-  animation: flyBottom 6s ease-in-out infinite;
-} */
-
-/* @keyframes flyTop {
-
-  0%,
-  100% {
-    transform: rotate(-20deg) translateY(0);
-  }
-
-  50% {
-    transform: rotate(-35deg) translateY(-25px);
-  }
-}
-
-@keyframes flyBottom {
-
-  0%,
-  100% {
-    transform: scaleX(-1) rotate(-20deg) translateY(0);
-  }
-
-  50% {
-    transform: scaleX(-1) rotate(-35deg) translateY(25px);
-  }
-} */
 
 /* ================= EVENT ================= */
 
@@ -468,12 +328,13 @@ body {
   font-weight: 400;
   margin-bottom: 50px;
   letter-spacing: 4px;
+  color: #1e1307;
 }
 
 .event-card {
   max-width: 480px;
   margin: auto;
-  border: 1px solid #d9c7b4;
+  border: 1px solid #c9b09a;
   padding: 50px 40px;
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.5);
@@ -484,7 +345,6 @@ body {
   gap: 32px;
 }
 
-/* --- Календарь --- */
 .event-calendar {
   display: flex;
   flex-direction: column;
@@ -495,10 +355,13 @@ body {
 
 .cal-month {
   font-family: "Cormorant Garamond", serif;
-  font-size: 0.8rem;
+  font-size: 0.95rem;
+  /* было 0.8rem */
   letter-spacing: 4px;
-  color: #9a7e6a;
-  font-weight: 500;
+  color: #6b5040;
+  /* было #9a7e6a */
+  font-weight: 600;
+  /* было 500 */
 }
 
 .cal-grid-header {
@@ -510,11 +373,14 @@ body {
 
 .cal-grid-header span {
   font-family: "Cormorant Garamond", serif;
-  font-size: 0.7rem;
+  font-size: 0.85rem;
+  /* было 0.7rem */
   letter-spacing: 1px;
-  color: #b89e8a;
+  color: #6b5040;
+  /* было #b89e8a */
   text-align: center;
   padding: 4px 0;
+  font-weight: 500;
 }
 
 .cal-grid {
@@ -527,9 +393,11 @@ body {
 
 .cal-cell {
   font-family: "Cormorant Garamond", serif;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  /* было 0.9rem */
   font-weight: 400;
-  color: #5d4635;
+  color: #3a2a1c;
+  /* было #5d4635 */
   text-align: center;
   padding: 6px 2px;
   position: relative;
@@ -539,13 +407,9 @@ body {
   color: transparent;
 }
 
-.cal-cell.muted {
-  color: #c9b8a8;
-}
-
 .cal-cell.today {
-  font-weight: 600;
-  color: #2e1f10;
+  font-weight: 700;
+  color: #1e1307;
   z-index: 1;
 }
 
@@ -554,118 +418,103 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 28px;
-  height: 28px;
-
+  width: 30px;
+  height: 30px;
   transform: translate(-50%, -50%);
-
-  border: 1.0px solid #2e1f10;
-  /* цвет как текст */
+  border: 1.5px solid #1e1307;
   border-radius: 50%;
-
   background: transparent;
-
   z-index: -1;
 }
 
 .cal-cell.today span {
   position: relative;
-  color: #5d4635;
-  font-weight: 600;
+  color: #1e1307;
+  font-weight: 700;
 }
 
-/* --- Разделитель --- */
 .event-divider {
   width: 60px;
   height: 1px;
-  background: #d9c7b4;
+  background: #c9b09a;
 }
 
-/* --- Время --- */
 .event-time {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-}
-
-.event-time-num {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 2.8rem;
-  font-weight: 300;
-  color: #2e1f10;
-  letter-spacing: 6px;
-}
-
-.event-time-label {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 0.75rem;
-  letter-spacing: 3px;
-  color: #9a7e6a;
-  font-weight: 500;
-}
-
-/* --- Адрес --- */
-.event-address {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
 }
 
+.event-time-num {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 3rem;
+  /* было 2.8rem */
+  font-weight: 300;
+  color: #1e1307;
+  letter-spacing: 6px;
+}
+
+.event-time-label {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.95rem;
+  /* было 0.75rem */
+  letter-spacing: 3px;
+  color: #6b5040;
+  /* было #9a7e6a */
+  font-weight: 600;
+}
+
+.event-address {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
 .event-city {
   font-family: "Cormorant Garamond", serif;
-  font-size: 0.85rem;
+  font-size: 1rem;
+  /* было 0.85rem */
   letter-spacing: 4px;
-  color: #9a7e6a;
-  font-weight: 500;
+  color: #6b5040;
+  /* было #9a7e6a */
+  font-weight: 600;
 }
 
 .event-hall {
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: #2e1f10;
+  font-size: 2rem;
+  /* было 1.8rem */
+  font-weight: 700;
+  /* было 600 */
+  color: #1e1307;
   letter-spacing: 3px;
 }
 
-/* --- Кнопка 2GIS --- */
 .event-map-btn {
   display: inline-block;
   margin-top: 8px;
-  padding: 14px 32px;
-  border: 1px solid #d9c7b4;
+  padding: 16px 36px;
+  /* было 14px 32px */
+  border: 1px solid #c9b09a;
   border-radius: 50px;
   font-family: "Cormorant Garamond", serif;
-  font-size: 1rem;
+  font-size: 1.05rem;
+  /* было 1rem */
   letter-spacing: 2px;
-  color: #5d4635;
+  color: #3a2a1c;
   text-decoration: none;
   transition: 0.3s;
   background: transparent;
+  font-weight: 500;
 }
 
 .event-map-btn:hover {
-  background: #5d4635;
+  background: #3a2a1c;
   color: white;
-  border-color: #5d4635;
+  border-color: #3a2a1c;
 }
-
-@media (max-width: 600px) {
-  .cal-day {
-    font-size: 5rem;
-  }
-
-  .event-hall {
-    font-size: 1.4rem;
-  }
-
-  .event-time-num {
-    font-size: 2.2rem;
-  }
-}
-
-/* ================= TIMER ================= */
 
 /* ================= TIMER ================= */
 
@@ -690,9 +539,10 @@ body {
   position: absolute;
   inset: 0;
   background: linear-gradient(to bottom,
-      rgba(20, 10, 5, 0.55) 0%,
-      rgba(20, 10, 5, 0.35) 50%,
-      rgba(20, 10, 5, 0.65) 100%);
+      rgba(15, 7, 3, 0.65) 0%,
+      rgba(15, 7, 3, 0.45) 50%,
+      rgba(15, 7, 3, 0.70) 100%);
+  /* чуть темнее для контраста */
   z-index: 0;
 }
 
@@ -704,10 +554,12 @@ body {
 
 .countdown-inner h2 {
   font-family: "Cormorant Garamond", serif;
-  font-size: 1rem;
-  font-weight: 400;
+  font-size: 1.1rem;
+  /* было 1rem */
+  font-weight: 500;
   letter-spacing: 8px;
-  color: rgba(255, 240, 220, 0.75);
+  color: rgba(255, 240, 220, 0.92);
+  /* было 0.75 — ярче */
   margin-bottom: 60px;
   text-transform: uppercase;
 }
@@ -723,7 +575,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   min-width: 100px;
 }
 
@@ -738,9 +590,11 @@ body {
 
 .timer-block p {
   font-family: "Cormorant Garamond", serif;
-  font-size: 0.65rem;
+  font-size: 0.85rem;
+  /* было 0.65rem */
   letter-spacing: 4px;
-  color: rgba(255, 230, 200, 0.6);
+  color: rgba(255, 230, 200, 0.9);
+  /* было 0.6 — намного ярче */
   font-weight: 500;
 }
 
@@ -748,28 +602,10 @@ body {
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(2.5rem, 6vw, 4.5rem);
   font-weight: 200;
-  color: rgba(255, 210, 170, 0.4);
+  color: rgba(255, 210, 170, 0.55);
   line-height: 1;
   margin-bottom: 28px;
 }
-
-@media (max-width: 600px) {
-  .timer-block {
-    min-width: 65px;
-  }
-
-  .timer-sep {
-    font-size: 2rem;
-  }
-
-  .countdown-inner h2 {
-    font-size: 0.8rem;
-    letter-spacing: 5px;
-    margin-bottom: 40px;
-  }
-}
-
-/* ================= RSVP ================= */
 
 /* ================= RSVP ================= */
 
@@ -789,16 +625,19 @@ body {
   font-size: 3rem;
   font-weight: 400;
   letter-spacing: 4px;
-  color: #2e1f10;
+  color: #1e1307;
   margin-bottom: 12px;
 }
 
 .rsvp-sub {
   font-family: "Cormorant Garamond", serif;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  /* было 1rem */
   letter-spacing: 2px;
-  color: #9a7e6a;
+  color: #6b5040;
+  /* было #9a7e6a */
   margin-bottom: 50px;
+  font-weight: 500;
 }
 
 #guestForm {
@@ -816,20 +655,25 @@ body {
 
 .form-group label {
   font-family: "Cormorant Garamond", serif;
-  font-size: 0.8rem;
+  font-size: 0.95rem;
+  /* было 0.8rem */
   letter-spacing: 3px;
-  color: #9a7e6a;
+  color: #6b5040;
+  /* было #9a7e6a */
   text-transform: uppercase;
+  font-weight: 600;
 }
 
 #guestForm input[type="text"],
 #guestForm textarea {
-  padding: 16px 20px;
-  border: 1px solid #d9c7b4;
+  padding: 18px 22px;
+  /* было 16px 20px */
+  border: 1px solid #c9b09a;
   border-radius: 0;
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.1rem;
-  color: #2e1f10;
+  font-size: 1.2rem;
+  /* было 1.1rem */
+  color: #1e1307;
   background: white;
   outline: none;
   transition: border-color 0.3s;
@@ -837,7 +681,7 @@ body {
 
 #guestForm input[type="text"]:focus,
 #guestForm textarea:focus {
-  border-color: #5d4635;
+  border-color: #3a2a1c;
 }
 
 #guestForm textarea {
@@ -845,7 +689,6 @@ body {
   resize: none;
 }
 
-/* --- Radio cards --- */
 .radio-group {
   display: flex;
   flex-direction: column;
@@ -860,75 +703,79 @@ body {
   display: flex;
   align-items: center;
   gap: 14px;
-  padding: 16px 20px;
-  border: 1px solid #d9c7b4;
+  padding: 18px 22px;
+  /* было 16px 20px */
+  border: 1px solid #c9b09a;
   cursor: pointer;
   transition: all 0.25s;
   background: white;
 }
 
 .radio-card input:checked+.radio-box {
-  border-color: #5d4635;
+  border-color: #3a2a1c;
   background: #fdf8f2;
 }
 
 .radio-icon {
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.1rem;
-  color: #9a7e6a;
-  width: 20px;
+  font-size: 1.2rem;
+  /* было 1.1rem */
+  color: #6b5040;
+  width: 22px;
   text-align: center;
   flex-shrink: 0;
 }
 
 .radio-card input:checked+.radio-box .radio-icon {
-  color: #5d4635;
+  color: #1e1307;
 }
 
 .radio-text {
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.05rem;
-  color: #5d4635;
-  letter-spacing: 1px;
+  font-size: 1.15rem;
+  /* было 1.05rem */
+  color: #3a2a1c;
+  /* было #5d4635 */
+  letter-spacing: 0.5px;
+  font-weight: 500;
 }
 
-/* --- Button --- */
 #guestForm button {
-  padding: 18px;
-  border: 1px solid #5d4635;
+  padding: 20px;
+  /* было 18px */
+  border: 1.5px solid #3a2a1c;
   border-radius: 0;
   background: transparent;
-  color: #5d4635;
+  color: #3a2a1c;
   font-family: "Cormorant Garamond", serif;
-  font-size: 0.85rem;
+  font-size: 1rem;
+  /* было 0.85rem */
   letter-spacing: 4px;
   text-transform: uppercase;
   cursor: pointer;
   transition: 0.3s;
   margin-top: 8px;
+  font-weight: 600;
 }
 
 #guestForm button:hover {
-  background: #5d4635;
+  background: #3a2a1c;
   color: white;
 }
 
-/* --- Success --- */
 .formSuccess {
   display: none;
   text-align: center;
   font-family: "Cormorant Garamond", serif;
   font-size: 1.8rem;
-  color: #5d4635;
+  color: #3a2a1c;
   letter-spacing: 2px;
   padding: 20px;
-  /* border: 1px solid #d9c7b4; */
 }
 
 /* ================= MOBILE ================= */
 
 @media (max-width: 900px) {
-
   #hero {
     grid-template-columns: 1fr;
   }
@@ -945,17 +792,84 @@ body {
     font-size: 5rem;
   }
 
-  .paper h2,
-  .paper p {
-    font-size: 1.5rem;
-  }
-
   .timer {
     flex-wrap: wrap;
     gap: 25px;
   }
+}
 
-  .timer span {
-    font-size: 2.8rem;
+@media (max-width: 600px) {
+
+  /* story */
+  .paper-text {
+    padding: 40px 20px;
+  }
+
+  .invite-greeting,
+  .invite-main {
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+    line-height: 2.0;
+  }
+
+  .invite-sub {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+
+  .invite-name {
+    font-size: 3.2rem;
+  }
+
+  .story-subtitle {
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+  }
+
+  .story-names {
+    font-size: 2.4rem;
+  }
+
+  /* event */
+  .event-hall {
+    font-size: 1.6rem;
+  }
+
+  .event-time-num {
+    font-size: 2.4rem;
+  }
+
+  /* timer */
+  .timer-block {
+    min-width: 65px;
+  }
+
+  .timer-block p {
+    font-size: 0.78rem;
+  }
+
+  .timer-sep {
+    font-size: 2rem;
+  }
+
+  .countdown-inner h2 {
+    font-size: 0.95rem;
+    letter-spacing: 5px;
+    margin-bottom: 40px;
+  }
+
+  /* birds */
+  .bird-right {
+    bottom: -8px;
+    right: 3%;
+    width: 140px;
+    z-index: 3;
+  }
+
+  /* lang */
+  .lang-switcher {
+    top: 14px;
+    right: 14px;
+    padding: 6px 14px;
   }
 }
