@@ -165,7 +165,7 @@ body {
 .paper-img {
   position: absolute;
   inset: -8% -6%;
-  width: 120%;
+  width: 130%;
   height: 116%;
   object-fit: fill;
   mix-blend-mode: multiply;
@@ -286,7 +286,7 @@ body {
 @media (max-width: 480px) {
   .paper-img {
     inset: -6% -7%;
-    width: 114%;
+    width: 117%;
     height: 112%;
   }
 }
